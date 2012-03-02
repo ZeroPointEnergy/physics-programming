@@ -1,0 +1,52 @@
+Exercise 2.1: ax + b = 0
+This is the general formula for a linear equation. Write a program which asks the user for a and b, and then solves the equation and print the value of x.
+
+- First think about how you actually solve the problem in maths.
+- Then write a programm that does this for you
+
+
+
+
+Exercise 2.2: A physics example
+Write a program that asks the user from how high a stone should be dropped. Then calculate how long it takes for the stone to hit ground, neglecting air resistance.
+
+
+
+
+Exercise 2.3: Banking Account
+In order to show you the importance of your choice of datatype for a variable, we have implemented two versions of a banking account program:
+
+1. bank_account_integer.c
+2. bank_account_float.c
+
+Have a look at the programs, compile and run them. 
+The first program implements your account balance in swiss centimes with integers (32bit/4bytes).
+The second program implements the balance with floats in francs. 
+
+Some questions in advance:
+- Why are we using centimes in the integer version and francs in the float version?
+
+Now try both programs. Keep in mind that this program is intended for a bank, which has customers with a few francs on their account, but also customers with multi-billion accounts, e.g.
+
+- M. Aspel has an initial balance of 2.1 Billion (Billion = Milliarde), and gets an additional 200 Million on his account.
+- N. Dario has an inital balance of 10 Swiss francs but wins in lotto and gets 200 Million swiss francs.
+
+Find the problems of the two programs. Change one of the programs so that it works more reliable.
+	
+
+
+Exercise 2.4: Sinus Function from math library
+Write a program that reads a number and with the help of math.h and sin() calculates the sine value of it. Which "version" of sin does C use? Degrees or radians? (try out with different values: 90°, pi, etc).
+
+
+
+
+
+Exercise 2.5: write a program that calculates
+	- cos(x)
+	- 1 - x^2/2 + x^4/24 
+	
+compare the results for different values of x. Are they similar?
+
+
+
