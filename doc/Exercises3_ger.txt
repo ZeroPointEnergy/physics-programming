@@ -1,0 +1,125 @@
+Exercises 3, 9.3.2012
+
+
+
+Exercise 3.1:
+
+Truth Tables (Paper Exercise)
+Please consider the following logical expression: !a && b, where a and b are 0 or 1. One can create a truth table of these variables:
+
+a		b				(!a && b)
+--------		---------
+0		0				0
+0		1				1
+1		0				0
+1		1				0
+
+
+The first and second column hold the variables a and b, and all the possible combinations (there are 2^n, where n is the number of variables).
+The third column holds the RESULT of the logical operation (!a && b).
+
+Remember what the logical operations do:
+
+-> !a  gives the "opposite of a", so 
+Truthtable of !a
+a			!a		
+--		--
+0			1
+1			0
+
+-> a && b  gives 1 only if a and b are 1, else gives zero
+(Truthtable is exercise 1.1)
+
+-> a || b  gives one if one or two of a and b are 1
+(Truthtable is exercise 1.2)
+
+
+Please write the truth tables for the follwoing logical expressions.
+
+1)  a && b   ( a and b)
+2)	a || b	 ( a or  b)
+3)	!a && !b
+4)	!(a || b )  (and compare to 3)
+	-> This will show you demorgangs law (google it if you like)
+	-> demorgans law:   !(a || b) = !a && !b
+											!(a && b) = !a || !b
+5) 	!a && ( b || c )
+6) 	 b || (!a && c)
+
+
+
+
+Exercise 3.2:
+
+Consider, compile (gcc -lm -o myprogram myprogram.c) and run the  program below:
+What does it do?
+What is the problem with it? (mathematically)
+Improve the programm in the following way:
+
+- Let the user enter the number of which the square-root should be taken of. (use "scanf")
+
+- Use a condition (if) to solve the problem of the program. The program should inform the user that the entered number was smaller than zero and that the squareroot of such a number cannot be calculated in R.
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+        float a;
+        float b;
+
+        a=103;
+        b=-78;
+
+        float wurzela = sqrt(a);
+        float wurzelb = sqrt(b);
+
+        printf("%f\n",wurzela);
+        printf("%f\n",wurzelb);
+
+
+        return 0;
+}
+
+
+
+Exercise 3.3:
+
+ax^2 + bx + c =0
+
+Write a program that solves this quadratic equation. The user must be able to enter a, b and c into the program ("scanf"). 
+
+- Do you remember the formula to solve quadratic equations?
+- What has to be considered mathematically?
+- Try to formulate the programm first on paper in pseudo code. 
+- Write the program in C
+- Make the programm user-friendly by always telling the user what happened (e.g. "With the parameters you entered, the quadratic equation only has one solution: 0").
+
+
+Exercise 3.4:
+Write a program that requires two dates as input in the format DD.MM.YY and says which is the more recent, or if they are equal.
+Hint: scanf can also read multiple variables a time:
+scanf("%d.%d.%d",&d,&m,&y);
+This line means, scanf is expecting 3 integers separated with dots, and puts them into variables d, m and y.
+The same applies for printf:
+printf("%02d.%02d.%04d \n",d,m,y);
+Will print the the date, formatting it to XX.XX.XXXX.
+
+- if you want, you can extend the program to check the validity of the dates (it is up to you how smart, e.g. considering leapyears, the solution is)
+
+
+Exercise 3.5:
+Write a programm in which the user can input 2 numbers. The first number is the number that is repeated, and the second number how many times it is repeated. Example: f(9,8) => 99999999. (It doesn't have to work for the number 0 as first parameter, though.)
+
+- This problem can be solved without loops. Try to find a mathematical way to do this.
+
+- After you have found the mathematical solution, think about forbidden input values (for example those that cause a division by zero), and intercept them using "if". Don't forget to tell the user what he has done wrong.
+
+
+Exercise 3.6:
+Write a program that requires an input date DD MM (year is 2011) and says which day of the week it is.
+
+
+
+
+
