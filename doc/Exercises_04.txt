@@ -1,0 +1,74 @@
+Exercises 4. 16.3.2012: Iteration
+
+
+
+Exercise 1: 
+Compile and run the following program
+
+#include <stdio.h>
+
+int main()
+{
+	int a;
+
+	for (a=0; a<10; a++)
+	{
+		printf("Hello World %d\n" , a);
+	}
+	return 0;
+}
+
+- What does it do?
+- Adapt the program, so that it prints "Hello World .." 20 times
+- Adapt the program, so that it prints 10 times "Hello Ciro" and 10 times "Hello Marcel".  
+- Adapt the Program, so that the user can input (using scanf) how many times "Hello World" should be printed
+
+
+
+Exercise 2: 
+Physics example
+You are standing at a lake and throwing a stone with angle alpha and velocity v. You are throwing the stone from starting position x=0, y=2m. Air resistance can be ignored.
+
+- Write a program that reads alpha and |v|
+- Your program should inform the user about nonsense-input.
+- .. and then prints out the position of the stone (x,y) in a 1-second interval (or an interval of your choice) until the stone hits the water
+- .. and calculates at what point in time and space the stone hits the lake surface.
+- Before hitting the keys, think about how you solve the problem with physics and maths
+
+
+Exercise 3:
+
+Words:
+interest: Zins
+compound interest: Zinseszins
+
+Read in three values representing:
+-> a capital sum
+-> a rate of interest in percent ("rate")
+-> a number of years
+
+- Compute the values of the capital sum with compound interest added over the given period of years. 
+
+- Evaluate the difference with respect to a situation where the initial capital and the number of years are the same, but the interests are paid every six month at a "rate/2" interest rate.
+
+- Adapt the program so that the user can also input in what intervals the interest is paid out, for example 4 times a year with interest rate/4, 12 times a year with interest rate/12 etc. This will lead you to the principle of continuous compounding (stetige verzinsung). If you do this exercise, insert a very high value for the intervals (n>1000), a rate of 100%, a capital of 1, and 1 year for the interest period. You will find a number which you should know very well.
+
+
+
+Exercise 4: 
+Prime Numbers
+- Write a program which reads a positive integer number from the user, and then determines if the number is a prime number.
+(Hint: You can check the remainder of a division with the modulo operator:  6 % 4 will give 2)
+
+- Extend the program, so that the user can give a maximum number, and the program then prints out all prime numbers up to this value.
+
+At some point, you might get some ideas of how to optimize the code. For example it makes no sense to check if an even number is a prime number (except for the number 2, of course.)
+
+
+Exercise 5: 
+- Imagine the stone from Exercise 2 being a football ball jumping off a football field over and over again (This time, we kick the ball from point x=0,y=0). Implement this using the assumption that it is inelastic scattering, with the ball loosing 20% of it's energy each time it hits the field, without changing the ratio between vx and vy. 
+- Implement this
+- What is the problem with "loosing 20% of its Energy"?
+- How do you solve that?
+- The program should output x, y and t for each given step in time (you choose) until the energy is 1% of the initial energy.
+
