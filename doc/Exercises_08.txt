@@ -1,0 +1,102 @@
+Exercises 8, 20. April 2012
+
+
+
+1) Create a structure Vector3D. Define functions to calculate dot-product (skalarprodukt) and cross-product (vektoprodukt). Reuse the code you have already written a few weeks ago (Exercise 5.2), but put it inside functions which take Vector3D types as parameters and return the appropriate type.
+
+2) Consider the following structure:
+
+struct record {
+  char firstname[30];
+  char lastname[30];
+  unsigned int age;
+  char phonenumber[30];
+};
+
+As you can see, the firstname, the lastname and the phone number are strings and they can record up to 29 characters (the last one is always needed to store the '\0' character).
+
+Write a program which reads data from an agenda (you can use the agenda file agenda.txt that you will find on the web), then stores the information inside an array of records and finally prints the information of everybody to the screen.
+
+Print the information of the youngest person to the screen.
+
+3) Use the source code below which contains three different structs: Sphere, Cuboid (Quader), Cylinder. We have also written the function prototypes to calculate the shape's volumes. Implement these functions.
+
+- What do you think might become a problem when we add 10 additional shapes?
+- Why can object-oriented programming help here
+
+
+#include <stdio.h>
+
+//struct definitions
+typedef struct 
+{
+  float radius;
+} sphere;
+
+typedef struct 
+{
+  float side_x;
+  float side_y;
+  float side_z;
+} cuboid;
+
+typedef struct 
+{
+  float height;
+  float radius;
+} cylinder;
+
+
+//function prototypes
+float volume_sphere(sphere);
+float volume_cuboid(cuboid);
+float volume_cylinder(cylinder);
+
+
+//main program
+int main()
+{
+  sphere a;
+  cuboid b;
+  cylinder c;
+  
+  a.radius = 10.2;
+  
+  b.side_x = 2.3;
+  b.side_y = 7.3;
+  b.side_z = 7.7;
+  
+  c.radius = 3.4;
+  c.height = 5.6;
+  
+  float sp_vol = volume_sphere(a);
+  printf("sphere volume: %f\n" , sp_vol);
+
+  float cb_vol = volume_cuboid(b);
+  printf("cuboid volume: %f\n" , cb_vol);
+
+  float cy_vol = volume_cylinder(c);
+  printf("cylinder volume: %f\n" , cy_vol);
+  
+  return 0;
+
+}
+
+//function implementations
+
+float volume_sphere(sphere the_sphere)
+{
+  //implement me
+}
+
+float volume_cuboid(cuboid the_cuboid)
+{
+  //implement me
+}
+
+float volume_cylinder(cylinder the_cylinder)
+{
+  //implement me
+}
+
+
