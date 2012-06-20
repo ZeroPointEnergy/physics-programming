@@ -1,0 +1,41 @@
+Exercises 7 - 08.01.2011
+Repetition, Pointers
+
+
+Before you start with these exercises, you should have done the following exercises:
+
+4.4 (primes)
+5.5 (filter)
+6.4 (weather)
+6.5 (game)
+
+
+
+
+Exercise 1
+
+Rewrite the program you have written to solve quadratic equations (Ex. 3.3) into a function with the following declaration:
+
+int square_equation(float a, float b, float c, float* r1, float* r2)
+
+This means you give a,b,c to the function, and two pointers to floats, where the function will store the results using the addresses. The function should return the number of solutions it found (this is why it returns an int)
+
+Test the function in a main program.
+
+
+
+Exercise 2
+
+Pointers are often used when we don't know in advance how many elements an array will have. In this exercise we want to cover this issue.
+
+Create a programm in which the user can insert as many numbers as he want. I suggest you ask the user after each number: "Do you want to insert another number?" (The user can answer with 0 or 1 to make it easier for you).
+
+Usually, one starts with a certain array size (with malloc) and keps track of the number of entries. As soon as the limit is reached, another array is created (with malloc) wich has typically double the size. The data inside the old array is then copied to the new array, and the programm can continue. Of course, don't forget to delete the memory allocated to the old array.
+
+For debugging purposes, you should print out something like a log: "I see that the array is now to small. Increasing size from 8 to 16..." etc.
+
+If you want, you can integrate your old program with the mean value and standard deviation to calculate these values after the user has inserted the numbers. Put it in a function with the array pointer as parameter and the current number of elements in the array.
+
+You will run into many problems, Segmentation faults and other problems. The assistants will help you.
+
+

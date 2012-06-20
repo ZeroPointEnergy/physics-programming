@@ -1,0 +1,125 @@
+Exercises 6 (Functions) 30.03.2012
+
+Exercise 1
+Write a function sign(float x), which returns
+-1 if x is negative
+ 0 if x is zero
+ 1 if x is positive
+Think about what type this function should return. (int or float? what makes sense?)
+
+
+Exercise 2
+Write a function factorial(n) which returns n! (Fakultaet)
+Think about what type this function should return. (int or float? what makes sense?)
+Also think about what data type the parameters expect. (For example does it make sense to pass a float value to the fakultaet function?)
+
+
+Exercise 3
+- Think about how you would implement a squareroot function. Think about how precise you want to be.
+- Implement the function in C now. 
+I recommend defining the function like this: (Because we do no want to interfere with the built-in sqrt function)
+
+float mysqrt(float ofnumber, float precision)
+
+You can see that in your version of sqrt, the user can also say how precise the value should be.
+
+
+-- From here on, Exercises are general. This means that you will need everything you have learned so far in order to solve them. --
+
+
+Exercise 4
+
+Consider the following problem. We have 4 weather stations, 1: Bern, 2: Zurich, 3: Geneva, 4: Basel
+These weather stations send their data (Temperature and relative humidity) to a server somewhere in Switzerland.
+Due to the conditions, the data not always reach the server. The data from the server look the following way:
+
+720 3
+(minute ID: 1 is 00:01, 2 is 00:02, ..., 720 is 12:00)  (number of measurements that reached the server)
+1 25.2 60.2
+3 23.1 59.7
+4 22.1 63.1
+(station number, here: Bern, Geneva and Basel)  (temp) (relative humidity)
+
+so there is always an entry with the timestamp of the measurement and the number of stations that reported a measurment (ranging from 0 to 4)
+please find this file online: weather.txt
+
+The task is now to do the following:
+The program should read the file, and then:
+
+- print the average temperature and rel. humidity of each station. Also print the standard deviation.
+- print the efficiency for the data transfer for each station (efficiency = (np/nt)*100, where np is the number of times that the station succeeded in tranferring data, nt is the total number of trials) 
+
+
+Exercise 5
+
+A Game: write a program that picks an integer value between 1 and 1000 randomly (see below how to create a random value).
+The game shall then ask the user to guess the number. Depending on the number the user entered, the program should tell the user if the number is too high, too low, or correct(if you want to make the game easier, you can also say "much too high" etc. this is up to you). The program terminates as soon as the correct number is found.
+
+How to create random numbers:
+
+include those two files at the beginning of your c code: (of course, don't forget to also include <stdio.h>)
+
+#include <stdlib.h>
+#include <time.h>
+
+at the beginning of your main function, do:
+
+srand(time(NULL)); 
+(this code sets the so called random seed according to the current time. We must do this in order to prevent the program from always using the same random numbers.)
+
+if you want to get a random number in the range (0,1000) anywhere in the program, you can use rand(), like this:
+
+int getrand;
+getrand = (int)(((double)rand()/(double)RAND_MAX)*1000.); 
+
+rand() returns a number between zero and 2^32 (on linux, might be another value on other systems)
+RAND_MAX is the maximum random number.   
+
+
+Additional/Optional Exercise
+
+*Not mandatory
+*This exercise is for those who want to solve a more complex and challenging problem
+*You are not suppose to solve this "puzzle" in 2 hours or less. I estimate that I would need at least 2-3 hours for a solution. 
+
+
+Game: Memory 
+Program the famous "Memory" game! I suggest the program prints a 8 times 8 field to the screen, like this:
+
+  1	2	3	4	5	6	7	8
+1	*	*	*	*	*	*	*	*
+2	*	*	*	*	*	*	*	*
+3	*	*	*	*	*	*	*	*
+4	*	*	*	*	*	*	*	*
+5	*	*	*	*	*	*	*	*
+6	*	*	*	*	*	*	*	*
+7	*	*	*	*	*	*	*	*
+8	*	*	*	*	*	*	*	*
+
+The user can then input which fields he wants to open: i.e. (3,2) (5,4) would redraw the field like this
+
+  1	2	3	4	5	6	7	8
+1	*	*	*	*	*	*	*	*
+2	*	*	*	*	*	*	*	*
+3	*	a	*	*	*	*	*	*
+4	*	*	*	*	*	*	*	*
+5	*	*	*	e	*	*	*	*
+6	*	*	*	*	*	*	*	*
+7	*	*	*	*	*	*	*	*
+8	*	*	*	*	*	*	*	*
+Sorry, no match. Hit "Return" to try it again.
+
+And then the user can try again. As soon as he hits a match, the pair stays of course (or disappears, you decide.)
+The program terminates as soon as the user has found all the pairs.
+
+Hints:
+- Try to avoid any difficulties that might eat up too much time. i.e.
+	- To make the field disappear (i.e. clear screen), just print 100 new lines.
+	- If you have trouble with chars as the hidden stuff, just use numbers.. it doesn't matter
+- You are absolutely free here. Program as you want. This is indeed the idea of programming, to design and write the whole program yourself
+- You basically need everything we learned up to now:
+	- conditions, loops, arrays, functions (us them carefully and reasonable, but DO USE THEM) etc.
+	- if you want you can print the solution to a file at the beginning of the game, so that you can cheat in order to debug the program.
+	
+	
+	

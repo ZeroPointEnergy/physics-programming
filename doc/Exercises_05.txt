@@ -1,0 +1,80 @@
+Exercises 5 (Arrays and Files), 23.3.2012
+
+
+Exercise 5.1:
+
+Write a program that asks the user for 10 numbers..
+
+a) .. and then stores the numbers in an array..
+b) .. calculates the average...
+c) .. and the standard deviation.
+
+Use a loop over the array to solve b) and c)
+
+
+
+Exercise 5.2:
+
+Write a program that asks the user for two 3-dimensional vectors .
+From these two vectors, calculate
+a) the scalar product
+b) the vector product
+
+
+
+Exercise 5.3:
+
+Write a program that defines and prints the unit matrix in 3 dimensions.
+Use an array with two indices for this purpose (double matrix[3][3]).
+
+The printed matrix should look like this:
+
+1		0		0
+0		1		0
+0		0		1
+
+remember that you can use %3.1f in printf, where the 3 in this case means to reserve 3 spaces for the number and 1 how many digits after the comma are to be printed. Maybe this is the time to experiment a little bit with printf.
+
+
+
+Exercise 5.4:
+
+Write a program which prints the following sequence to a FILE:
+2
+4
+8
+16
+32
+64
+...
+
+Then write another program which reads the previous file and prints it to the terminal. Since the program doesn't know in advance how long the file is, use feof (See slides for details).
+
+
+
+
+Exercise 5.5
+Filtering algorithm
+Please find the file data.txt on the web. Download it to your directory. The file contains the three-momenta of particles in each line, like:
+45.6 23.7 2.1
+this means that the x-component of the momentum is 45.6, the y-component of the momentum is 23.7, and the z component of the momentum is 2.1
+
+In High Energy Physics we often only want to work with the particles that have a so called Transverse momentum (which is sqrt(x^2 + y^2)) higher than a certain value. 
+
+Write a programm which reads in the data.txt file line by line, checks if the current particle has a higher Transverse momentum than 30, and if this is the case, writes the x, y and z components back to a new file (filterdata.txt).
+
+In conclusion: The program reads in the file data.txt, filters the data according to a rule, and writes back the data that passed the filter back to a file.
+
+What you need:
+- Know how to read a file line by line
+- Know how to write a file line by line 
+
+
+
+Exercise 5.6
+
+Sorting Algorithm
+Write a program which reads 10 numbers from the user and then sorts these numbers. You might want to design this algorithm "on paper" first and then discuss with your fellow students. Then implement it in C.
+
+(The aim of this exercise is to combine your programming language skills with your ability to make up algorithms. )
+
