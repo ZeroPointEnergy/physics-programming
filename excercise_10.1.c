@@ -125,7 +125,6 @@ int main(void)
   simpson_integration(-3, 3, precision, 0);
   simpson_integration(-4, 4, precision, 0);
   simpson_integration(-5, 5, precision, 0);
-  simpson_integration(-6, 6, precision, 0);
 }
 
 
